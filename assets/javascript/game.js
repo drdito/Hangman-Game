@@ -1,4 +1,4 @@
-var possibleWords = ["kylo ren", "han solo", "death star","darth vader", "luke skywalker", "tataouine", "lightsaber", "yoda", "stormtrooper", "ewoks", "the dark side"];
+var possibleWords = ["kylo ren", "han solo", "death star","darth vader", "luke skywalker", "tataouine", "lightsaber", "yoda", "stormtrooper", "ewoks", "the dark side", "the battle of hoth"];
 
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -62,6 +62,8 @@ function fillGuessedLetters() {
 
 
 function checker() {
+
+  
 
   for (var x = 0; x < randomWord.length; x++) {
 
@@ -158,16 +160,6 @@ document.onkeyup = function(event) {
   }
 
    
-    
-    
-  
-
-  
-
- 
-
-
-
 }
  
 

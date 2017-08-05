@@ -1,0 +1,56 @@
+    body {
+        background-image: url("../images/maxresdefault.jpg");
+        color: #ffe81f;
+        font-family: 'Press Start 2P', cursive;
+    }
+
+    #wrapper {
+        margin: auto;
+        text-align: left;
+        margin-top: 50px;
+    }
+
+    #letter0, #letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, 
+    #letter10, #letter11, #letter12, #letter13, #letter14, #letter15, #letter16, #letter17 {
+        
+        width: 50px;
+        height: 60px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 50px;
+        line-height: 60px;
+        visibility: hidden;
+       
+
+        
+    }
+
+    #underline0, #underline1, #underline2, #underline3, #underline4, #underline5, #underline6, #underline7, 
+    #underline8, #underline9, #underline10, #underline11, #underline12, #underline13, #underline14, #underline15,
+    #underline16, #underline17 {
+     	border-bottom: solid;
+        float: left;
+        width: 50px;
+        height: 60px;
+        margin-right: 5px;
+        visibility: hidden;
+
+
+    }
+
+     #wordWrap{
+        display: inline-block;
+        width: auto ;
+        margin: 0 auto;
+        padding: 10px;
+        
+        
+
+    }
+
+    #starWarsLogo {
+        position: absolute;
+        left: 982px;
+        top: 0;
+
+    }

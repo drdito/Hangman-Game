@@ -102,6 +102,9 @@ window.onload = function fillBlanks() {
 
 
 
+/* I had to use window.onload for my previous function to work correctly, I could not make my application track wins
+So reset simply reloads the page with a new random word. */
+
 function reset() {
 
 

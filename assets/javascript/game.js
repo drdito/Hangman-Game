@@ -3,6 +3,7 @@ var possibleWords = ["kylo ren", "han solo", "death star","darth vader", "luke s
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 var guessedLetters = [];
+var correctLetters = [];
 
 var wins = 0;
 
@@ -23,7 +24,7 @@ var wins = 0;
 
 
 
-//Function to pick a random word for the Game//
+//Function to pick a random word for the Game
 
 function selectRandomWord() {
 
@@ -62,20 +63,19 @@ function fillGuessedLetters() {
 
 
 function checker() {
-
-  
-
   for (var x = 0; x < randomWord.length; x++) {
-
     if (randomWord.charAt(x) === event.key) {
       document.getElementById("letter" + x).style.visibility = "visible";
-      winCondition++;
-
+      var correctIndex = correctLetters.indexOf(event.key);
+      if (correctIndex === -1) {
+        correctLetters.push(event.key);
+        for (var y = 0; y < randomWord.length; y++) {
+          if (randomWord.charAt(y) === event.key) {
+            winCondition++;
+          }
+        }
+      }
     }
-
-   
-
-
   }
 }
 

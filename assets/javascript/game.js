@@ -1,21 +1,14 @@
 var possibleWords = ["kylo ren", "han solo", "death star","darth vader", "luke skywalker", "tataouine", "lightsaber", "yoda", "stormtrooper", "ewoks", "the dark side", "the battle of hoth"];
-
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
 var guessedLetters = [];
 var correctLetters = [];
-
 var wins = 0;
-
 var guessesRemaining = 12;
-
 var randomWord  = selectRandomWord();
-
 var letterFill= "b";
-
 var winCondition=0;
-
 var wins = 0;
+
 
 
 
@@ -79,6 +72,18 @@ function checker() {
   }
 }
 
+
+
+function generateIframe() {
+  document.body.appendChild(document.createElement('iframe'));
+  document.querySelector('iframe').setAttribute('src', 'https://getyarn.io/yarn-clip/embed/a2022b08-f86c-4196-93de-32fe1624038b?autoplay=true');
+  document.querySelector('iframe').setAttribute('id', 'starWarsYarn');
+  document.querySelector('iframe').setAttribute('seamless', 'seamless');
+}
+  
+
+
+
  
 window.onload = function fillBlanks() {
   
@@ -106,27 +111,8 @@ window.onload = function fillBlanks() {
 So reset simply reloads the page with a new random word. */
 
 function reset() {
-
-
   location.reload ();
-
-  
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 selectRandomWord();
 
@@ -140,29 +126,24 @@ document.onkeyup = function(event) {
   document.getElementById("guessedLettersString").innerHTML = "Letters Guessed: " + guessedLetters;
   document.getElementById("guesses").innerHTML = "Guesses Remaining: " + guessesRemaining;
 
-  if (winCondition >= randomWord.length && guessesRemaining > 0) {
+  if (winCondition === randomWord.length && guessesRemaining >= 0) {
 
     document.getElementById("guesses").innerHTML = "You Win!!!";
-    document.getElementById("reset").innerHTML = "Press [Space] to play again!"
-    
+    document.getElementById("reset").innerHTML = "Press [Space] to play again!";
+    document.getElementById('audiotag1').pause();
+    generateIframe();
   }
 
-  if (guessesRemaining === 0) {
+  if (guessesRemaining === 0 && winCondition !==randomWord.length) {
     document.getElementById('audiotag1').pause();
     document.getElementById('audiotag2').play();
-  }
-
-  if (guessesRemaining <=0) {
-    
     document.getElementById("guesses").innerHTML = "You lose, but keep guessing till you get it!";
     document.getElementById("reset").innerHTML = "Press [Space] to try again!"
+   
   }
-
   if (event.keyCode === 32) {
     reset();
   }
-
-   
 }
  
 
